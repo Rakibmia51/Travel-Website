@@ -25,7 +25,7 @@ const tours = [
     title: "Bali, Indonesia",
     city: "Indonesia",
     distance: 400,
-    price: 99,
+    price: 199,
     maxGroupSize: 8,
     desc: "this is the description",
     reviews: [
@@ -47,7 +47,7 @@ const tours = [
     title: "Snowy Mountains, Thailand",
     city: "Thailand",
     distance: 500,
-    price: 99,
+    price: 150,
     maxGroupSize: 8,
     desc: "this is the description",
     reviews: [],
@@ -60,7 +60,7 @@ const tours = [
     title: "Beautiful Sunrise, Thailand",
     city: "Thailand",
     distance: 500,
-    price: 99,
+    price: 200,
     maxGroupSize: 8,
     desc: "this is the description",
     reviews: [
@@ -78,7 +78,7 @@ const tours = [
     title: "Nusa Pendia Bali, Indonesia",
     city: "Indonesia",
     distance: 500,
-    price: 99,
+    price: 359,
     maxGroupSize: 8,
     desc: "this is the description",
     reviews: [
@@ -96,7 +96,7 @@ const tours = [
     title: "Cherry Blossoms Spring",
     city: "Japan",
     distance: 500,
-    price: 99,
+    price: 919,
     maxGroupSize: 8,
     desc: "this is the description",
     reviews: [
@@ -114,7 +114,7 @@ const tours = [
     title: "Holmen Lofoten",
     city: "France",
     distance: 500,
-    price: 99,
+    price: 199,
     maxGroupSize: 8,
     desc: "this is the description",
     reviews: [
@@ -132,7 +132,7 @@ const tours = [
     title: "Snowy Mountains, Thailand",
     city: "Thailand",
     distance: 500,
-    price: 99,
+    price: 200,
     maxGroupSize: 8,
     desc: "this is the description",
     reviews: [
