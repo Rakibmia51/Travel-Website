@@ -58,7 +58,10 @@ const Home = () => {
                     <img src={heroImg02} alt="" />
                   </div>
                 </Col>
-                <SearchBar/>
+               
+                <Col lg='12'>
+                  <SearchBar/>
+                </Col>
             </Row>
         </Container>
       </section>
@@ -72,7 +75,7 @@ const Home = () => {
                   <h5 className='services__subtitle'>What we serve</h5>
                   <h2 className="services__title">We offer our best services</h2>
                 </Col>
-                <ServiceList/>
+                   <ServiceList/>
             </Row>
          </Container>
       </section>
