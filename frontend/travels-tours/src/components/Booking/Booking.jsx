@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import './booking.css'
 import { Form, FormGroup, ListGroup, ListGroupItem, Button } from 'reactstrap'
+import { useNavigate } from 'react-router-dom'
+
 
 const Booking = ({tour, avgRating}) => {
 
     const {price, reviews} = tour
+    const navigate = useNavigate()
 
     const [credentials, setCredentials] = useState({
         userId: '01', // later it will be dynamic
@@ -16,9 +19,20 @@ const Booking = ({tour, avgRating}) => {
     })
 
 
-    const handleChange = () =>{
-
+    const handleChange = (e) =>{
+        setCredentials(prev=>({...prev, [e.target.id]:e.target.value }))
     }
+
+    // send data to the server
+    const handeClick = (e)=>{
+        e.preventDefault()
+
+        console.log(credentials);
+        navigate("/thank-you")
+    }
+
+    const serviceFee = 10
+    const totaAmount = Number(price)* Number(credentials.guestSize) + Number(serviceFee)
 
   return (
     <div className='booking'>
@@ -35,7 +49,7 @@ const Booking = ({tour, avgRating}) => {
         {/* ================ booking form start ================= */}
         <div className="booking__form">
             <h5>Information</h5>
-            <form className='booking__info-form'>
+            <form onSubmit={handeClick} className='booking__info-form'>
                 <FormGroup>
                     <input 
                         type="text" 
@@ -76,23 +90,23 @@ const Booking = ({tour, avgRating}) => {
             <ListGroup>
                 <ListGroupItem className='border-0 px-0'>
                     <h5 className='d-flex align-items-center gap-1'>
-                        ${price} <i className='ri-close-line'></i> 1 person
+                        ${price} <i className='ri-close-line'></i> {credentials.guestSize} person
                     </h5>
-                    <span>${price}</span>
+                    <span>${price*credentials.guestSize}</span>
                 </ListGroupItem>
 
                 <ListGroupItem className='border-0 px-0'>
                     <h5>Service charge</h5>
-                    <span>$10</span>
+                    <span>${serviceFee}</span>
                 </ListGroupItem>
 
                 <ListGroupItem className='border-0 px-0 total'>
                     <h5>Total</h5>
-                    <span>$109</span>
+                    <span>${totaAmount}</span>
                 </ListGroupItem>
             </ListGroup>
 
-            <Button className='btn primary__btn w-100 mt-4'>
+            <Button className='btn primary__btn w-100 mt-4' onClick={handeClick}>
                 Book Now
             </Button>
         </div>
