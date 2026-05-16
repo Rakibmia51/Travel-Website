@@ -6,6 +6,7 @@ import {useParams} from 'react-router-dom'
 import tourData from '../assets/data/tours'
 import calculateAvgRating from '../utils/avgRating'
 import avater from '../assets/images/avatar.jpg'
+import Booking from '../components/Booking/Booking'
 
 const TourDetails = () => {
 
@@ -50,7 +51,7 @@ const TourDetails = () => {
                       <i className='ri-star-fill'
                         style={{color: 'var(--secondary-color)'}}
                       ></i> 
-                      {calculateAvgRating === 0 ? null : avgRating}
+                      {avgRating === 0 ? null : avgRating}
                       {totalRating === 0 ? (
                           'Not rated' 
                       ): (<span>({reviews?.length})</span>)}
@@ -123,6 +124,12 @@ const TourDetails = () => {
               {/* ==================== Tour reviews section End =============== */}
 
             </div>
+          </Col>
+          <Col lg='4'>
+              <Booking 
+                tour={tour} 
+                avgRating={avgRating}
+              />
           </Col>
       </Row>
       </Container>
