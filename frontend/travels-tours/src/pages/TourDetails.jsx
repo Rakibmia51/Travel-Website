@@ -7,6 +7,7 @@ import tourData from '../assets/data/tours'
 import calculateAvgRating from '../utils/avgRating'
 import avater from '../assets/images/avatar.jpg'
 import Booking from '../components/Booking/Booking'
+import NewsLetter from '../shared/NewsLetter'
 
 const TourDetails = () => {
 
@@ -98,8 +99,8 @@ const TourDetails = () => {
 
                   <ListGroup className='user__reviews'>
                       {
-                        reviews?.map(reviews=>(
-                          <div className="review__item">
+                        reviews?.map((reviews, index)=>(
+                          <div className="review__item" key={index}>
                             <img src={avater} alt="" />
 
                             <div className="w-100">
@@ -134,6 +135,7 @@ const TourDetails = () => {
       </Row>
       </Container>
     </section>
+    <NewsLetter/>
   </>
 }
 
