@@ -4,6 +4,8 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 const cookieParser  = require('cookie-parser')
 const tourRoute = require('./routes/tours')
+const userRoute = require('./routes/user')
+const authRoute = require('./routes/auth')
 
 const app = express()
 const port = process.env.PORT || 5000
@@ -27,7 +29,9 @@ app.use(cors())
 app.use(cookieParser())
 
 //Routes
+app.use('/auth', authRoute)
 app.use('/tours', tourRoute)
+app.use('/users', userRoute)
 
 // for testing
 app.get('/', (req, res) => {
